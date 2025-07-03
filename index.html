@@ -1,23 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Simple Website</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Piano World</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <header>
-    <h1>Welcome to My Website</h1>
-    <p>This is a simple site built on my Chromebook!</p>
+<body class="light-mode">
+  <nav>
+    <div class="logo">🎹 Piano World</div>
+    <div class="links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="toggle" onclick="toggleMode()">🌙</button>
+  </nav>
+
+  <header id="home">
+    <h1>Welcome to Piano World</h1>
+    <p>Discover the beauty and power of the piano.</p>
   </header>
 
-  <main>
-    <h2>About Me</h2>
-    <p>Hi! I'm learning how to build websites.</p>
+  <main id="about">
+    <h2>About Pianos</h2>
+    <p>Pianos have inspired generations of musicians. Invented in the 1700s, they remain a core of classical and modern music alike.</p>
   </main>
 
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email us at <a href="mailto:music@pianoworld.com">music@pianoworld.com</a></p>
+  </section>
+
   <footer>
-    <p>&copy; 2025 My Simple Site</p>
+    <p>&copy; 2025 Piano World. All rights reserved.</p>
   </footer>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle("dark-mode");
+      document.body.classList.toggle("light-mode");
+      const icon = document.querySelector(".toggle");
+      icon.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+    }
+  </script>
 </body>
 </html>
